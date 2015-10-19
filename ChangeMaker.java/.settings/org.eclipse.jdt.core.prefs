@@ -1,4 +1,6 @@
-package four.one.javafx;
+
+
+
 import javax.swing.JOptionPane;
 
 import javafx.application.Application;
@@ -16,181 +18,76 @@ import javafx.stage.Stage;
 
 public class AuthenticationGUI extends Application {
 
-	
 	public static void main(String[] args) {
 		launch(args);
-		//Main is not required in gitbash, remember not to copy and paste code. 
-		//Make new code off this design 
+		// Main is not required in gitbash, remember not to copy and paste code.
+		// Make new code off this design
 	}
+
 	@Override
 	public void start(Stage primaryStage) {
 		primaryStage.setTitle("Authentication");
 		TextField usernameTxtFld = new TextField();
 		PasswordField passwordTxtFld = new PasswordField();
-		PasswordField passwordTxtFld2 = new PasswordField();
-		TextField usernameTxtFld2 = new TextField();
+
 		Label UserLbl = new Label("Username");
 		Label PassLbl = new Label("Password");
-		
+
 		Button submit = new Button("Submit");
 		Button submit2 = new Button("Submit");
 		submit.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent arg0) {
-				//int i=0;
+				// int i=0;
 				String inputUser = "";
 				String inputPass = "";
-				String Username ="Tuna";
-				String Password ="Magic";
-				String Username2="logic?";
-				String Password2="Nah";
-				String inputUser2="";
-				String inputPass2="";
-				int i;
-				i=0;
-				
-				do {	
-				inputUser = usernameTxtFld.getText();
-				inputPass = passwordTxtFld.getText();
-				if (inputUser.equals(Username) && (inputPass.equals(Password))) {
-					JOptionPane.showMessageDialog(null, "welcome" + inputUser);
-					break;
-				}else {
-					
-				}
-				
-				} while (!inputUser2.equals(Username2) && (!inputPass2.equals(Password2)));
-				for (i=0; i<3; i++); {	
-					inputUser2 = usernameTxtFld2.getText();
-					inputPass2 = passwordTxtFld2.getText();
-					if (inputUser2.equals(Username2) && (inputPass2.equals(Password2))) {
-					JOptionPane.showMessageDialog(null, "Welcome" + inputUser2);
-					i=12;
+				String Username = "Tuna";
+				String Password = "Magic";
+
+			
+				do {
+					inputUser = usernameTxtFld.getText();
+					inputPass = passwordTxtFld.getText();
+					System.out.print(inputUser);
+					System.out.print(inputPass);
+					if (inputUser.equals(Username) && (inputPass.equals(Password))) {
+						JOptionPane.showMessageDialog(null, "welcome" + inputUser);
+						System.out.print("hello");
+						break;
+
 					} else {
-						
+
 					}
-			}
-			
-			
-			}
-				
-		
-				
-			
-			
-		});
-		submit.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
-			
-			public void handle(ActionEvent arg0) {
-				//int i=0;
-				String inputUser = "";
-				String inputPass = "";
-				String Username ="Tuna";
-				String Password ="Magic";
-				
-				do {	
-				inputUser = usernameTxtFld2.getText();
-				inputPass = passwordTxtFld2.getText();
-				if (inputUser.equals(Username) && (inputPass.equals(Password))) {
-					JOptionPane.showMessageDialog(null, "welcome" + inputUser);
-					break;
-				}else {
-					break;
-				}
-				
-				
+
 				} while (!inputUser.equals(Username) && (!inputPass.equals(Password)));
-			
-			}
-		});
-	/**	GridPane grid =new GridPane();
-		grid.setAlignment(Pos.CENTER);
-		grid.setVgap(10);
-		
-		grid.add(UserLbl,0,0);
-		grid.add(PassLbl,0,1);
-		grid.add(usernameTxtFld,1,0);
-		grid.add(passwordTxtFld,1,1);
-		grid.add(submit,1,2);*/
-	
-
-		/**
-		//new button usage
-			submit2.setOnAction(new EventHandler<ActionEvent>() {
-				public void handle1(ActionEvent arg1) {
-				String Username2="logic?";
-				String Password2="Nah";
-				String inputUser2="";
-				String inputPass2="";
-				int i;
-				i=0;
-				for (i=0; i<3; i++); {	
-					inputUser2 = usernameTxtFld2.getText();
-					inputPass2 = passwordTxtFld2.getText();
-					if (inputUser2.equals(Username2) && (inputPass2.equals(Password2))) {
-					JOptionPane.showMessageDialog(null, "Welcome" + inputUser2);
-					i=12;
+				
+				for (int i = 0;  i < 3; i++) {
+					inputUser = usernameTxtFld.getText();
+					inputPass = passwordTxtFld.getText();
+					if (inputUser.equals(Username) && (inputPass.equals(Password))) {
+						JOptionPane.showMessageDialog(null, "Welcome" + inputUser);
+						i = 12;
 					} else {
-						
+
 					}
-			}
+				}
+
 			}
 
-				@Override
-				public void handle(ActionEvent event) {
-					// TODO Auto-generated method stub
-					
-				}
-			
-			
-			
-				
-		
-				
-			
-			
-		});*/
-		/**
-        GridPane grid =new GridPane();
-		grid.setAlignment(Pos.CENTER);
-		grid.setVgap(10);
-		
-		grid.add(UserLbl,0,0);
-		grid.add(PassLbl,0,1);
-		grid.add(usernameTxtFld,1,0);
-		grid.add(passwordTxtFld,1,1);
-		grid.add(submit,1,2);
-		*/
-		GridPane grid2 =new GridPane();
+		});
+
+		GridPane grid2 = new GridPane();
 		grid2.setAlignment(Pos.CENTER);
-		grid2.setVgap(10);;
-		
-		grid2.add(UserLbl,0,0);
+		grid2.setVgap(10);
+		;
+
+		grid2.add(UserLbl, 0, 0);
 		grid2.add(PassLbl, 0, 1);
-		grid2.add(usernameTxtFld2,1,0);
-		grid2.add(passwordTxtFld2,1,1);
-		grid2.add(submit2,1,2);
-		Scene scene = new Scene(grid2, 500,500);
+		grid2.add(usernameTxtFld, 1, 0);
+		grid2.add(passwordTxtFld, 1, 1);
+		grid2.add(submit, 1, 2);
+		Scene scene = new Scene(grid2, 500, 500);
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
 }
-	
-
-
-
-
-
-/**Button btn = new Button();
-btn.setText("say 'Hello World'");
-btn.setOnAction(new EventHandler<ActionEvent>() {
-	  public void handle(ActionEvent event) {
-		  System.out.println("Hello World!");
-	  }
-	  //if (input.equals(Username)) {//
-});
-StackPane root = new StackPane();
-root.getChildren().add(btn);
-primaryStage.setScene(new Scene(root, 300, 250));
-primaryStage.show();*/
